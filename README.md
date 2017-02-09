@@ -4,7 +4,7 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 http://test.go.163.com/go/2016/1227/H5lock/src/H5lock.js
 
 ## demo ##
-![qr-code](qr-code/qrcode.png)
+![qr-code](qr-code/qr-code.png)
 
 ## 使用说明 ##
 H5lock.js
