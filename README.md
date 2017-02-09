@@ -1,5 +1,5 @@
 # H5lock
-H5九宫格解锁 样式绘图（支持Canvas和图片）
+H5解锁样式绘图（九宫格样式扩展，支持Canvas和图片）
 
     http://test.go.163.com/go/2016/1227/H5lock/src/H5lock.js
 
