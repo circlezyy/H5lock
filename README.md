@@ -8,7 +8,7 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 
 [http://test.go.163.com/go/2016/1227/H5lock/](http://test.go.163.com/go/2016/1227/H5lock/)
 
-##使用说明
+## 使用说明 ##
 
 ###HTML
 
