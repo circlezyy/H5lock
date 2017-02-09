@@ -48,7 +48,7 @@ H5解锁样式绘图（九宫格样式扩展，支持Canvas和图片）
     </script>
 
 ## 高级 ##
-H5Lock.js自定义
+[H5Lock.js自定义](#HTML)
 
 ### 初始页面效果 ###
 	H5lock.prototype.drawCle = function(x, y) { // 初始化解锁面板
