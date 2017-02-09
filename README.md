@@ -12,29 +12,36 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 
 ###HTML
 
+```html
 	<canvas id="canvas" width="400" height="600"></canvas>
+```
 
 ### JavaScript ###
 
+```javascript
 	<script type="text/javascript" src="src/H5lock.js"></script>
 	<script type="text/javascript">
         var lock = new H5lock({});
         lock.init(n,m,H5lockImgSrc);//n:列数 m:行数 H5lockImgSrc:图片路径
 	</script>
+```
 
 ### Option method ###
 
+```javascript
 	lock.reset(); //页面重置
+```
 
 ### 示例 ###
-
+```html
     <div id="canvas-box">
     	<a id="updatePassword">重置</a>
     	<canvas id="canvas" width="400" height="600"></canvas>
-    </div>  
+    </div>
+```
 
-----------
 
+```script
     <script type="text/javascript" src="src/H5lock.js"></script>
     <script type="text/javascript">
     	// 初始化
@@ -46,11 +53,13 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
     		lock.reset();
     	});
     </script>
+```
 
 ## 高级 ##
 H5Lock.js自定义
 
 ### 初始页面效果 ###
+```javascript
 	H5lock.prototype.drawCle = function(x, y) { // 初始化解锁面板
 		// 线条颜色
 		this.ctx.strokeStyle = '#CFE6FF';
@@ -61,10 +70,12 @@ H5Lock.js自定义
 		this.ctx.closePath();
 		this.ctx.stroke();
 	}
+```
 
 ### 触碰后样式 ###
 
 #### 图片实现 ####
+```javascript
 	H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（图片）
 		var imgObj = new Image();
 		imgObj.src = this.H5lockImgSrc;
@@ -74,8 +85,10 @@ H5Lock.js自定义
 			this.ctx.drawImage(imgObj,othis.lastPoint[i].x-(othis.r+1), othis.lastPoint[i].y-(othis.r+1), othis.r*2+2, othis.r*2+2);
 		}
 	}
+```
 
 #### Canvas实现 ####
+```javascript
 	H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（Canvas画圆心）
 		for (var i = 0 ; i < this.lastPoint.length ; i++) {
 			// 填充颜色
@@ -86,6 +99,7 @@ H5Lock.js自定义
 			this.ctx.fill();
 		}
 	}
+```
 
 ## 补充 ##
  
@@ -102,10 +116,3 @@ H5Lock.js自定义
 ----------
 
 H5解锁密码识别功能：[https://github.com/lvming6816077/H5lock](https://github.com/lvming6816077/H5lock)
-
-```html
-<html>
-	<head></head>
-	<body>111</body>
-</html>
-```
