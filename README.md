@@ -89,7 +89,7 @@ H5Lock.js自定义
 
 ## 补充 ##
  
-报错：`getImageData on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.，crossorigin`    
+报错：`Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.`    
 原因：getImageData此方法不允许操作非此域名外的图片资源，即使是子域也不行  
 解决办法：  
 
