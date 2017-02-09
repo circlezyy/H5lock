@@ -43,7 +43,7 @@ lock.reset(); //页面重置
 ```
 
 
-```script
+```javascript
 <script type="text/javascript" src="src/H5lock.js"></script>
 <script type="text/javascript">
 	// 初始化
