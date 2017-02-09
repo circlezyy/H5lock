@@ -13,92 +13,97 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 ###HTML
 
 ```html
-	<canvas id="canvas" width="400" height="600"></canvas>
+<canvas id="canvas" width="400" height="600"></canvas>
 ```
 
 ### JavaScript ###
 
 ```javascript
-	<script type="text/javascript" src="src/H5lock.js"></script>
-	<script type="text/javascript">
-        var lock = new H5lock({});
-        lock.init(n,m,H5lockImgSrc);//n:列数 m:行数 H5lockImgSrc:图片路径
-	</script>
+<script type="text/javascript" src="src/H5lock.js"></script>
+<script type="text/javascript">
+	var lock = new H5lock({});
+	lock.init(n,m,H5lockImgSrc);//n:列数 m:行数 H5lockImgSrc:图片路径
+</script>
 ```
+
 
 ### Option method ###
 
 ```javascript
-	lock.reset(); //页面重置
+lock.reset(); //页面重置
 ```
 
 ### 示例 ###
+
 ```html
-    <div id="canvas-box">
-    	<a id="updatePassword">重置</a>
-    	<canvas id="canvas" width="400" height="600"></canvas>
-    </div>
+<div id="canvas-box">
+	<a id="updatePassword">重置</a>
+	<canvas id="canvas" width="400" height="600"></canvas>
+</div>
 ```
 
 
 ```script
-    <script type="text/javascript" src="src/H5lock.js"></script>
-    <script type="text/javascript">
-    	// 初始化
-    	var lock = new H5lock({});
-    	//4列,6行,图片路径
-    	lock.init(4,6,"src/star3.png");
-    	// 重置按钮
-    	document.getElementById('updatePassword').addEventListener('click', function(){
-    		lock.reset();
-    	});
-    </script>
+<script type="text/javascript" src="src/H5lock.js"></script>
+<script type="text/javascript">
+	// 初始化
+	var lock = new H5lock({});
+	//4列,6行,图片路径
+	lock.init(4,6,"src/star3.png");
+	// 重置按钮
+	document.getElementById('updatePassword').addEventListener('click', function(){
+		lock.reset();
+	});
+</script>
 ```
 
 ## 高级 ##
 H5Lock.js自定义
 
 ### 初始页面效果 ###
+
 ```javascript
-	H5lock.prototype.drawCle = function(x, y) { // 初始化解锁面板
-		// 线条颜色
-		this.ctx.strokeStyle = '#CFE6FF';
-		// 线条宽度
-		this.ctx.lineWidth = 2;
-		this.ctx.beginPath();
-		this.ctx.arc(x, y, this.r, 0, Math.PI * 2, true);
-		this.ctx.closePath();
-		this.ctx.stroke();
-	}
+H5lock.prototype.drawCle = function(x, y) { // 初始化解锁面板
+	// 线条颜色
+	this.ctx.strokeStyle = '#CFE6FF';
+	// 线条宽度
+	this.ctx.lineWidth = 2;
+	this.ctx.beginPath();
+	this.ctx.arc(x, y, this.r, 0, Math.PI * 2, true);
+	this.ctx.closePath();
+	this.ctx.stroke();
+}
 ```
 
 ### 触碰后样式 ###
 
 #### 图片实现 ####
+
 ```javascript
-	H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（图片）
-		var imgObj = new Image();
-		imgObj.src = this.H5lockImgSrc;
-		for (var i = 0 ; i < this.lastPoint.length ; i++) {
-			var othis = this;
-			this.ctx.clearRect(othis.lastPoint[i].x-(othis.r+2), othis.lastPoint[i].y-(othis.r+2), othis.r*2+4, othis.r*2+4);
-			this.ctx.drawImage(imgObj,othis.lastPoint[i].x-(othis.r+1), othis.lastPoint[i].y-(othis.r+1), othis.r*2+2, othis.r*2+2);
-		}
+H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（图片）
+	var imgObj = new Image();
+	imgObj.src = this.H5lockImgSrc;
+	for (var i = 0 ; i < this.lastPoint.length ; i++) {
+		var othis = this;
+		this.ctx.clearRect(othis.lastPoint[i].x-(othis.r+2), othis.lastPoint[i].y-(othis.r+2), othis.r*2+4, othis.r*2+4);
+		this.ctx.drawImage(imgObj,othis.lastPoint[i].x-(othis.r+1), othis.lastPoint[i].y-(othis.r+1), othis.r*2+2, othis.r*2+2);
 	}
+}
 ```
 
 #### Canvas实现 ####
+
 ```javascript
-	H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（Canvas画圆心）
-		for (var i = 0 ; i < this.lastPoint.length ; i++) {
-			// 填充颜色
-			this.ctx.fillStyle = '#CFE6FF';
-			this.ctx.beginPath();
-			this.ctx.arc(this.lastPoint[i].x, this.lastPoint[i].y, this.r / 2, 0, Math.PI * 2, true);
-			this.ctx.closePath();
-			this.ctx.fill();
-		}
+H5lock.prototype.drawPoint = function() { // 初始化触碰后样式（Canvas画圆心）
+	for (var i = 0 ; i < this.lastPoint.length ; i++) {
+		// 填充颜色
+		this.ctx.fillStyle = '#CFE6FF';
+		this.ctx.beginPath();
+		this.ctx.arc(this.lastPoint[i].x, this.lastPoint[i].y, this.r / 2, 0, Math.PI * 2, true);
+		this.ctx.closePath();
+		this.ctx.fill();
 	}
+}
 ```
 
 ## 补充 ##
