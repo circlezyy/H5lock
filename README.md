@@ -10,7 +10,7 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 
 ## 使用说明 ##
 
-###HTML###
+###HTML
 
 	<canvas id="canvas" width="400" height="600"></canvas>
 
@@ -48,7 +48,7 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
     </script>
 
 ## 高级 ##
-* [H5Lock.js自定义](#HTML)
+[H5Lock.js自定义](#HTML)
 
 ### 初始页面效果 ###
 	H5lock.prototype.drawCle = function(x, y) { // 初始化解锁面板
