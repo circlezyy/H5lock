@@ -102,3 +102,10 @@ H5Lock.js自定义
 ----------
 
 H5解锁密码识别功能：[https://github.com/lvming6816077/H5lock](https://github.com/lvming6816077/H5lock)
+
+```html
+<html>
+	<head></head>
+	<body>111</body>
+</html>
+```
