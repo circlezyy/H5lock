@@ -10,7 +10,7 @@ H5九宫格解锁 样式绘图（支持Canvas和图片）
 
 ## 使用 说明 ##
 
-###HTML
+### HTML
 
 ```html
 <canvas id="canvas" width="400" height="600"></canvas>
